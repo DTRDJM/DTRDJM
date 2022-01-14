@@ -1,4 +1,4 @@
-### Hi there 👋
+### Hello there 👋 🌞
 
 I’m currently working on learning how to use GitHub 🙂
 
