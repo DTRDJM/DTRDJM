@@ -1,0 +1,47 @@
+let bandName = 0;
+
+//const RecommendedDeepPurple = ('In Rock, Fireball, Machinehead, Who Do We Think We Are, Made in Japan');
+const DeepPurple = ('In Rock, Fireball, Machinehead, Who Do We Think We Are, Made in Japan');
+const SlavesToGravity = ('Scatter the Crow, UnderWaterOuterSpace');
+const PeterGabriel = ('1 Car, 3 Melt, 4 Security, So, Us');
+
+function setup() {
+  createCanvas(500, 400);
+}
+
+function draw() {
+  background(175);
+
+  
+  input = createInput();
+  input.position(20, 75);
+
+  button = createButton('Submit');
+  button.position(input.x + input.width, 75);
+  button.mousePressed(selection);
+
+  bandInput = createElement('h2', 'What is the Band / Artist Name?');
+  bandInput.position(20, 5);
+
+  textAlign(CENTER);
+  textSize(50);
+}
+
+function selection(bandInput) {
+  var bandName = input.value();
+  bandInput.html('Recommended albums by ' + bandName + ' are:');
+  input.value('');
+  //Do not know how to replicate User input
+}
+  if(bandName == 'Deep Purple'){
+  console.log(DeepPurple);
+  }
+  else if(bandName == 'Slaves to Gravity'){
+  console.log(SlavesToGravity);
+  }
+  else if(bandName == 'Peter Gabriel'){
+  console.log(PeterGabriel);
+  }
+  else {
+  console.log('Band or Artist not found');
+  }
