@@ -1,47 +1,80 @@
 let bandName = 0;
 
+
 //const RecommendedDeepPurple = ('In Rock, Fireball, Machinehead, Who Do We Think We Are, Made in Japan');
 const DeepPurple = ('In Rock, Fireball, Machinehead, Who Do We Think We Are, Made in Japan');
 const SlavesToGravity = ('Scatter the Crow, UnderWaterOuterSpace');
 const PeterGabriel = ('1 Car, 3 Melt, 4 Security, So, Us');
+const JulianCope = ('World Shut Your Mouth, Fried, Saint Julian, My Nation Underground, Peggy Suicide, Jehovahkill, Autogeddon, 20 Mothers, Interpreter, Revolutionary Suicide');
+const Air = ('Moon Safari, Talkie Walkie, Pocket Symphony, Love 2');
+const Beck = ('Mellow Gold, Mutations, Sea Change, The Information, Modern Guilt');
+const IQ = ('Nomzamo, Are You Sitting Comfortably?');
+const Muse = ('Origin of Symmetry, Black Holes and Revelations, The Resistance, Live at Rome Olympic Stadium');
+
 
 function setup() {
-  createCanvas(500, 400);
+createCanvas(500, 400);
+background(175);
+
+
+input = createInput();
+input.position(20, 75);
+
+
+button = createButton('Submit');
+button.position(input.x + input.width, 75);
+button.mousePressed(selection);
+
+
+textSize(25);
 }
+
+
 
 function draw() {
-  background(175);
-
+var bandInput = text('What is the Band / Artist Name?', 10, 45);
+  //Above amendment by Bradie
   
-  input = createInput();
-  input.position(20, 75);
-
-  button = createButton('Submit');
-  button.position(input.x + input.width, 75);
-  button.mousePressed(selection);
-
-  bandInput = createElement('h2', 'What is the Band / Artist Name?');
-  bandInput.position(20, 5);
-
-  textAlign(CENTER);
-  textSize(50);
+  //Below was from P5 Input and Button
+ // bandInput = createElement('h2', 'What is the Band / Artist Name?');
+  //bandInput.position(20, 5);
+  //textAlign(CENTER);
+  //textSize(50);
+  
 }
+
+//Try reference text for output
 
 function selection(bandInput) {
-  var bandName = input.value();
-  bandInput.html('Recommended albums by ' + bandName + ' are:');
-  input.value('');
-  //Do not know how to replicate User input
+var bandName = input.value();
+text('What is the Band / Artist Name?', 10, 45);
+//input.value('');
+
+if(bandName == 'Deep Purple'){
+console.log(DeepPurple);
 }
-  if(bandName == 'Deep Purple'){
-  console.log(DeepPurple);
-  }
-  else if(bandName == 'Slaves to Gravity'){
-  console.log(SlavesToGravity);
-  }
-  else if(bandName == 'Peter Gabriel'){
-  console.log(PeterGabriel);
-  }
-  else {
-  console.log('Band or Artist not found');
-  }
+else if(bandName == 'Slaves to Gravity'){
+console.log(SlavesToGravity);
+}
+else if(bandName == 'Peter Gabriel'){
+console.log(PeterGabriel);
+}
+else if(bandName == 'Julian Cope'){
+console.log(JulianCope);  
+}
+else if(bandName == 'Air'){
+console.log(Air);
+}
+else if(bandName == 'Beck'){
+console.log(Beck);
+}
+else if(bandName == 'IQ'){
+console.log(IQ);
+}
+else if(bandName == 'Muse'){
+console.log(Muse);
+}
+else {
+console.log('Band or Artist not found');
+}
+}
